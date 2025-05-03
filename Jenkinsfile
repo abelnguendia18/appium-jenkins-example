@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/abelnguendia18/appium-jenkins-example.git'
+                git branch: 'development', url: 'https://github.com/abelnguendia18/appium-jenkins-example.git'
             }
         }
         stage('Start Appium') {
