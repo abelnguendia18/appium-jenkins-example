@@ -13,16 +13,18 @@ class FirstTest {
     private var desiredCapabilities = DesiredCapabilities()
     private val appiumServerUrl = "http://localhost:4723/"
     private val appPackage = "com.google.android.calculator"
-    private val platformName = "Android"
+    private val platform = "Android"
     private val automationName = "UiAutomator2"
     private val appActivity = "com.android.calculator2.Calculator"
 
     @BeforeTest
     fun setUp() {
-        desiredCapabilities.setCapability("platformName", platformName)
-        desiredCapabilities.setCapability("appium:automationName", automationName)
-        desiredCapabilities.setCapability("appium:appPackage", appPackage)
-        desiredCapabilities.setCapability("appium:appActivity", appActivity)
+        desiredCapabilities.apply {
+            setCapability("platformName", platform)
+            setCapability("appium:automationName", automationName)
+            setCapability("appium:appPackage", appPackage)
+            setCapability("appium:appActivity", appActivity)
+        }
         driver = AndroidDriver(URL(appiumServerUrl), desiredCapabilities)
     }
 

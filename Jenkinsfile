@@ -22,6 +22,14 @@ pipeline {
             steps {
                 sh 'mvn clean test'
             }
+            post {
+                 always {
+                     allure includeProperties:
+                     false,
+                     jdk: '',
+                     results: [[path: 'build/allure-results']]
+                 }
+            }
         }
     }
 }
