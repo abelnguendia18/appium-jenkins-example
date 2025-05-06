@@ -28,7 +28,7 @@ class FirstTest {
         driver = AndroidDriver(URL(appiumServerUrl), desiredCapabilities)
     }
 
-    @Test
+    @Test(description = "Simple multiplication")
     fun `Simple multiplication gives correct result`() {
         driver.findElement(By.id(DIGIT_5)).click()
         driver.findElement(By.id(MULTIPLICATION)).click()
